@@ -1,0 +1,179 @@
+package gui;
+
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import java.awt.GridLayout;
+import javax.swing.JComboBox;
+import javax.swing.JLabel;
+import javax.swing.DefaultComboBoxModel;
+import javax.swing.JTextField;
+import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import javax.swing.JScrollPane;
+import javax.swing.JTextArea;
+import javax.swing.JTextPane;
+
+public class gaui extends JFrame {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	private JPanel contentPane;
+	private JTextField textnombre;
+	private JTextField textcodigo;
+	private JTextField textcategoria;
+	private JTextField textapellidos;
+	private JTextField texttelefono;
+	private JTextField textdni;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					gaui frame = new gaui();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	public gaui() {
+		setTitle("Mantenimiento");
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 652, 416);
+		contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
+		JComboBox comboBox = new JComboBox();
+		comboBox.setModel(new DefaultComboBoxModel(new String[] {"Vendedores", "Clientes", "Productos"}));
+		comboBox.setBounds(10, 11, 155, 22);
+		comboBox.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                int selesion = comboBox.getSelectedIndex();
+                switch (selesion) {
+				case 0: {
+					
+				}
+				default:
+					System.out.print(selesion);
+				}
+            }
+        });
+		contentPane.add(comboBox);
+		
+		
+		JButton btnNewButton = new JButton("Ingreso");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
+		btnNewButton.setBounds(175, 11, 81, 23);
+		contentPane.add(btnNewButton);
+		
+		JButton btnNewButton_1 = new JButton("Modificar");
+		btnNewButton_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
+		btnNewButton_1.setBounds(260, 11, 87, 23);
+		contentPane.add(btnNewButton_1);
+		
+		JButton btnNewButton_2 = new JButton("Consulta");
+		btnNewButton_2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
+		btnNewButton_2.setBounds(351, 11, 95, 23);
+		contentPane.add(btnNewButton_2);
+		
+		JButton btnNewButton_3 = new JButton("Eliminar");
+		btnNewButton_3.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
+		btnNewButton_3.setBounds(448, 11, 87, 23);
+		contentPane.add(btnNewButton_3);
+		
+		JButton btnNewButton_4 = new JButton("Listar");
+		btnNewButton_4.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
+		btnNewButton_4.setBounds(545, 11, 81, 23);
+		contentPane.add(btnNewButton_4);
+		JLabel lblcodigo = new JLabel("codigo:");
+		lblcodigo.setBounds(36, 47, 46, 14);
+		contentPane.add(lblcodigo);
+		
+		JLabel lblcategoria = new JLabel("categoria");
+		lblcategoria.setBounds(175, 47, 65, 14);
+		contentPane.add(lblcategoria);
+		
+		textnombre = new JTextField();
+		textnombre.setBounds(235, 44, 86, 20);
+		contentPane.add(textnombre);
+		textnombre.setColumns(10);
+		
+		JLabel lblnombre = new JLabel("nombre:");
+		lblnombre.setBounds(331, 47, 65, 14);
+		contentPane.add(lblnombre);
+		
+		textcodigo = new JTextField();
+		textcodigo.setBounds(84, 44, 81, 20);
+		contentPane.add(textcodigo);
+		textcodigo.setColumns(10);
+		
+		textcategoria = new JTextField();
+		textcategoria.setBounds(391, 44, 86, 20);
+		contentPane.add(textcategoria);
+		textcategoria.setColumns(10);
+		
+		JLabel lblapellidos = new JLabel("apellidos:");
+		lblapellidos.setBounds(487, 47, 65, 14);
+		contentPane.add(lblapellidos);
+		
+		textapellidos = new JTextField();
+		textapellidos.setBounds(545, 44, 81, 20);
+		contentPane.add(textapellidos);
+		textapellidos.setColumns(10);
+		
+		JLabel lbltelefono = new JLabel("telefono:");
+		lbltelefono.setBounds(23, 72, 75, 14);
+		contentPane.add(lbltelefono);
+		
+		texttelefono = new JTextField();
+		texttelefono.setBounds(79, 69, 86, 20);
+		contentPane.add(texttelefono);
+		texttelefono.setColumns(10);
+		
+		JLabel lbldni = new JLabel("dni:");
+		lbldni.setBounds(190, 72, 46, 14);
+		contentPane.add(lbldni);
+		
+		textdni = new JTextField();
+		textdni.setBounds(217, 69, 86, 20);
+		contentPane.add(textdni);
+		textdni.setColumns(10);
+		JScrollPane scrollPane = new JScrollPane();
+		scrollPane.setBounds(10, 98, 616, 268);
+		contentPane.add(scrollPane);
+		
+		JTextArea textArea = new JTextArea();
+		scrollPane.setViewportView(textArea);
+	}
+}

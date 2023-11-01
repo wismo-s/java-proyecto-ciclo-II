@@ -1,0 +1,3 @@
+INDEX VERSION 1.131+E:\proyecto Poo java\.metadata\.plugins\org.eclipse.jdt.core
+722519516.index
+196672687.index
